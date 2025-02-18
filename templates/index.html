@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction</title>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="clump_thickness">Clump Thickness:</label>
+        <input type="number" id="clump_thickness" name="clump_thickness" required><br><br>
+
+        <label for="uniformity_cell_size">Uniformity of Cell Size:</label>
+        <input type="number" id="uniformity_cell_size" name="uniformity_cell_size" required><br><br>
+
+        <label for="uniformity_cell_shape">Uniformity of Cell Shape:</label>
+        <input type="number" id="uniformity_cell_shape" name="uniformity_cell_shape" required><br><br>
+
+        <label for="marginal_adhesion">Marginal Adhesion:</label>
+        <input type="number" id="marginal_adhesion" name="marginal_adhesion" required><br><br>
+
+        <label for="single_epithelial_cell_size">Single Epithelial Cell Size:</label>
+        <input type="number" id="single_epithelial_cell_size" name="single_epithelial_cell_size" required><br><br>
+
+        <label for="bare_nuclei">Bare Nuclei:</label>
+        <input type="number" id="bare_nuclei" name="bare_nuclei" required><br><br>
+
+        <label for="bland_chromatin">Bland Chromatin:</label>
+        <input type="number" id="bland_chromatin" name="bland_chromatin" required><br><br>
+
+        <label for="normal_nucleoli">Normal Nucleoli:</label>
+        <input type="number" id="normal_nucleoli" name="normal_nucleoli" required><br><br>
+
+        <label for="mitoses">Mitoses:</label>
+        <input type="number" id="mitoses" name="mitoses" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Prediction: <span style="color: {% if prediction == 'Malignant' %}red{% else %}green{% endif %};">{{ prediction }}</span></h2>
+    {% endif %}
+</body>
+</html>
+
+
+
