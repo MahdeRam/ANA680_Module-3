@@ -18,10 +18,8 @@ spec:
       - name: wine-model
         image: mahderam/wine-model:v1
         imagePullPolicy: IfNotPresent
-        imagePullSecrets:
-          - name: myregistrykey
-    ports:
-        - containerPort: 5000
+        ports:
+          - containerPort: 5000
         resources:
           limits:
             cpu: "500m"
@@ -41,3 +39,6 @@ spec:
             port: 5000
           initialDelaySeconds: 15
           periodSeconds: 15
+      imagePullSecrets:
+        - name: myregistrykey
+
