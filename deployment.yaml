@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: wine-model
-        image: wine-model:v1
-        imagePullPolicy: Never
+        image: mahderam/wine-model:v1
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         resources:
